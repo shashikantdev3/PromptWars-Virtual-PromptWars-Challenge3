@@ -12,7 +12,7 @@ interface BreakdownChartProps {
  * accessible data table. The chart is hidden from assistive tech (it is a
  * visual aid); the table is the screen-reader-friendly source of truth.
  */
-export function BreakdownChart({ breakdown }: BreakdownChartProps) {
+function BreakdownChart({ breakdown }: BreakdownChartProps) {
   const data = CATEGORY_META.map((meta) => ({
     key: meta.key,
     name: meta.label,
