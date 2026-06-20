@@ -59,7 +59,7 @@ export function HistoryPanel({ records, onClear }: HistoryPanelProps) {
             ))}
           </ul>
 
-          <div className="btn-row" style={{ marginTop: '1rem' }}>
+          <div className="btn-row btn-row--spaced">
             <button type="button" className="btn btn--ghost" onClick={onClear}>
               Clear history
             </button>

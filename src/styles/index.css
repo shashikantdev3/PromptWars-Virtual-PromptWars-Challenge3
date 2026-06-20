@@ -494,3 +494,12 @@ legend {
 .site-footer a {
   color: var(--color-primary);
 }
+
+/* ---------- Layout utilities ---------- */
+.grid--stacked {
+  margin-top: 1.25rem;
+}
+
+.btn-row--spaced {
+  margin-top: 1rem;
+}

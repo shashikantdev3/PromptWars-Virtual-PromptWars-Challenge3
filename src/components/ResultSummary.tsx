@@ -1,7 +1,8 @@
-import type { FootprintBreakdown } from '../domain/types';
 import { treesEquivalent } from '../domain/calculator';
-import { compareFootprint, formatCo2 } from '../domain/format';
 import { REFERENCE_FOOTPRINTS } from '../domain/emissionFactors';
+import { compareFootprint, formatCo2 } from '../domain/format';
+import { categoryLabel, topCategory } from '../domain/insights';
+import type { FootprintBreakdown } from '../domain/types';
 
 interface ResultSummaryProps {
   breakdown: FootprintBreakdown;
@@ -12,6 +13,7 @@ export function ResultSummary({ breakdown }: ResultSummaryProps) {
   const comparison = compareFootprint(breakdown.total);
   const trees = treesEquivalent(breakdown.total);
   const vsGlobal = Math.round(comparison.vsGlobalAverage * 100);
+  const biggest = topCategory(breakdown);
 
   return (
     <section className="card" aria-labelledby="result-heading">
@@ -31,6 +33,11 @@ export function ResultSummary({ breakdown }: ResultSummaryProps) {
           {comparison.rating}
         </span>
         <p className="rating-label">{comparison.label}</p>
+        {biggest ? (
+          <p className="rating-label">
+            Biggest source: <strong>{categoryLabel(biggest)}</strong>
+          </p>
+        ) : null}
       </div>
 
       <div className="stat-row" role="list">

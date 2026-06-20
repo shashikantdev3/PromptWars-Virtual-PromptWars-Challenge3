@@ -27,4 +27,11 @@ describe('ResultSummary', () => {
     expect(screen.getByText(/global average/i)).toBeInTheDocument();
     expect(screen.getByText(/trees \/ year/i)).toBeInTheDocument();
   });
+
+  it('names the biggest emitting category', () => {
+    render(<ResultSummary breakdown={breakdown} />);
+    // food is the largest category in the fixture (2500)
+    expect(screen.getByText(/biggest source:/i)).toBeInTheDocument();
+    expect(screen.getByText(/food & diet/i)).toBeInTheDocument();
+  });
 });

@@ -138,6 +138,12 @@ src/
   test/          Test setup
 ```
 
+## 📐 Architecture & contributing
+
+See [`ARCHITECTURE.md`](ARCHITECTURE.md) for the layered design (pure domain
+logic vs. presentation) and key decisions, and [`CONTRIBUTING.md`](CONTRIBUTING.md)
+for the local pipeline and conventions.
+
 ## 📄 License
 
 [MIT](LICENSE).
